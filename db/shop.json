@@ -1,0 +1,44 @@
+{
+    "products": [{
+            "id": 1,
+            "name": "Laptop",
+            "price": 2500,
+            "categoryId": 1,
+            "description": "Asus ZenBook",
+            "imageUrl": "https://via.placeholder.com/280x180.jpg?text=Laptop"
+        },
+        {
+            "id": 2,
+            "name": "Mouse",
+            "price": 25,
+            "categoryId": "2",
+            "description": "A4 Tech",
+            "imageUrl": "https://via.placeholder.com/280x180.jpg?text=Mouse"
+        },
+        {
+            "name": "Telefon",
+            "categoryId": "2",
+            "description": "IPhone 8 Telefon",
+            "imageUrl": "https://via.placeholder.com/280x180.jpg?text=Telefon",
+            "price": "5000",
+            "id": 3
+        },
+        {
+            "name": "Buzdolabı",
+            "description": "Arçelik no-frost buzdolabı",
+            "imageUrl": "https://via.placeholder.com/280x180.jpg?text=Buzdolabı",
+            "price": "2000",
+            "categoryId": "2",
+            "id": 4
+        }
+    ],
+    "categories": [{
+            "id": 1,
+            "name": "Bilgisayar"
+        },
+        {
+            "id": 2,
+            "name": "Elektronik"
+        }
+    ]
+}
