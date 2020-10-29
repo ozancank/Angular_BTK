@@ -16,14 +16,14 @@ namespace SehirRehberi.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetValues()
+        public async Task<IActionResult> GetValues()
         {
             var values = await _context.Values.ToListAsync();
             return Ok(values);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
             var value = await _context.Values.FirstOrDefaultAsync(v => v.Id == id);
             return Ok(value);

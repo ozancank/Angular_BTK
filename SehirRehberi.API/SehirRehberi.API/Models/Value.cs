@@ -1,8 +1,13 @@
-﻿namespace SehirRehberi.API.Models
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
+namespace SehirRehberi.API.Models
 {
     public class Value
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
     }
 }

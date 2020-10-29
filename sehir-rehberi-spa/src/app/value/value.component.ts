@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Value } from '../models/Value';
+
 
 @Component({
   selector: 'app-value',
@@ -13,16 +14,18 @@ export class ValueComponent implements OnInit {
     private http: HttpClient
   ) { }
 
+  httpOptions = { headers: new HttpHeaders({ "Content-Type": "application/json" }) };
   values: Value[] = [];
+  model: Value = new Value();
 
   ngOnInit() {
-    this.getValues().subscribe(data =>
-      this.values = data
-    );
+    this.getValues().subscribe(data => {
+      this.values = data;
+      console.log(data);
+    });
   }
 
   getValues() {
-    return this.http.get<Value[]>("https://localhost:32776/api/values")
+    return this.http.get<Value[]>("https://localhost:44371/api/values")
   }
-
 }
