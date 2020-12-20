@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 namespace SehirRehberi.API.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class ValuesController : ControllerBase
     {
-        private DataContext _context;
+        private readonly DataContext _context;
 
         public ValuesController(DataContext context)
         {

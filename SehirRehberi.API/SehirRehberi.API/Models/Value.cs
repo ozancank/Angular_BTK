@@ -1,8 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
-
-namespace SehirRehberi.API.Models
+﻿namespace SehirRehberi.API.Models
 {
     public class Value
     {

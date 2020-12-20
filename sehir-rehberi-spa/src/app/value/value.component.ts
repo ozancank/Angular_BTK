@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Value } from '../models/Value';
+import { Value } from '../models/value';
 
 
 @Component({
