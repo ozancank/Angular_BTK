@@ -16,8 +16,10 @@ import {
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private authService: AuthService,
-    private formBuilder: FormBuilder) { }
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder
+  ) { }
 
   registerForm!: FormGroup;
   registerUser: any = {}
@@ -34,8 +36,12 @@ export class RegisterComponent implements OnInit {
         Validators.maxLength(8)]],
         confirmPassword: ["", Validators.required]
       },
-      { validator: null }
+      { validator: this.passwordMatchValidator }
     )
+  }
+
+  passwordMatchValidator(g: FormGroup) {
+    return (g.get("password")?.value === g.get("confirmPassword")?.value) ? null : { mismatch: true }
   }
 
   register() {

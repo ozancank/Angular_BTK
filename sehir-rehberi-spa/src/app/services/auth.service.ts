@@ -21,7 +21,7 @@ export class AuthService {
   userToken: any;
   decodedToken: any;
   jwtHelper: JwtHelper = new JwtHelper();
-  TOKEN_KEY = 'TOKEN';
+  TOKEN_KEY = 'token';
 
   login(loginUser: LoginUser) {
     let headers = new HttpHeaders();
@@ -49,17 +49,18 @@ export class AuthService {
 
   logOut() {
     localStorage.removeItem(this.TOKEN_KEY);
+    this.alertifyService.error("Sistemden çıkış yapıldı.");
   }
 
   loggedIn() {
     return tokenNotExpired(this.TOKEN_KEY);
   }
 
-  get token() {
-    return localStorage.getItem(this.TOKEN_KEY);
+  get tokenn() {
+    return localStorage.getItem(this.TOKEN_KEY)!;
   }
 
   getCurrentUserId() {
-    return this.jwtHelper.decodeToken(this.token).nameid;
+    return this.jwtHelper.decodeToken(this.tokenn).nameid;
   }
 }

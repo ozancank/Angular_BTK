@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { NgxEditorModule } from "ngx-editor";
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { appRoutes } from './routes';
 import { NgxGalleryModule } from "ngx-gallery-9";
 import { AlertifyService } from './services/alertify.service';
 import { RegisterComponent } from './register/register.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     CityComponent,
     CityDetailComponent,
     CityAddComponent,
-    RegisterComponent
+    RegisterComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
-    NgxGalleryModule
+    NgxGalleryModule,
+    NgxEditorModule,
+    FileUploadModule
   ],
   providers: [AlertifyService],
   bootstrap: [AppComponent]

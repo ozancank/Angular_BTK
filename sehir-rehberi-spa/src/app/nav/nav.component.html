@@ -17,11 +17,15 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="cityadd" routerLinkActive="active">Şehir Ekle</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="register" routerLinkActive="active">Kayıt ol</a>
+            </li>
         </ul>
         <form *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" name="userName" [(ngModel)]="loginUser.userName" required type="text" placeholder="Kullanıcı Adı">
             <input class="form-control mr-sm-2" name="password" [(ngModel)]="loginUser.password" required type="text" placeholder="Şifre">
             <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid" type="submit">Giriş</button>
         </form>
+        <button class="btn btn-secondary my-2 my-sm-0" *ngIf="isAuthenticated" (click)="logOut()" type="submit">Çıkış</button>
     </div>
 </nav>

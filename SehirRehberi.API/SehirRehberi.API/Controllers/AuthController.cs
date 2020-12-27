@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using SehirRehberi.API.Data;
 using SehirRehberi.API.Dtos;
 using SehirRehberi.API.Models;
@@ -66,7 +67,7 @@ namespace SehirRehberi.API.Controllers
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            var tokenString = tokenHandler.WriteToken(token);
+            var tokenString = JsonConvert.SerializeObject(tokenHandler.WriteToken(token));
 
             return Ok(tokenString);
         }

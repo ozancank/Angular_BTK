@@ -31,7 +31,7 @@ export class CityService {
   }
 
   add(city: City) {
-    this.httpClient.post(this.path + "cities/add", city).subscribe(data => {
+    this.httpClient.post<City>(this.path + "cities/add", city).subscribe(data => {
       this.alertifyService.success("Şehir başarıyla eklendi.");
       this.router.navigateByUrl("/cityDetail/" + data["id"]);
     });
